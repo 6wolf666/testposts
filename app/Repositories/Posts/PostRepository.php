@@ -17,6 +17,14 @@ class PostRepository
         'description',
         'created_at'
     ];
+
+    public function getAllPosts()
+    {
+        return Post::query()
+            ->select('*')
+            ->paginate();
+    }
+
     public function getActivePosts()
     {
         return Post::query()
